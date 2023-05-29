@@ -32,7 +32,7 @@ pipeline {
     
     post {
         always {
-            junit test-results/*.xml
+            sh 'junit test-results/*.xml'
             cleanWs()
         }
     }

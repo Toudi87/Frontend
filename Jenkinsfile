@@ -64,7 +64,7 @@ pipeline {
                 dir('ArgoCD') {
                     withCredentials([gitUsernamePassword(credentialsId: 'git', gitToolName: 'Default')]) {
                         git branch: 'master', url: 'https://github.com/Toudi87/argo.git'
-                        sh """ cd backend
+                        sh """ cd frontend
                         git config --global user.email "dariusz.scibior@gmail.com"
                         git config --global user.name "Darek"
                         sed -i "s#$imageName*#$imageName:$dockerTag#g" deployment.yaml
